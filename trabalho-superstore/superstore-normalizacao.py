@@ -69,54 +69,43 @@ dados = dados.drop(columns=['Sales_bin', 'Discount_bin', 'Profit_bin'])
 
 
 # Gráficos dos atributos numéricos e categóricos
-# Boxplot dos atributos numéricos selecionados
+# Boxplot
 plt.figure(figsize=(12, 6))
 sns.boxplot(data=dados[["Sales", "Discount", "Profit"]])
 plt.title("Boxplot dos atributos numéricos")
 plt.show()
 
-# # Histograma dos atributos numéricos selecionados
-# plt.figure(figsize=(12, 6))
-# dados[["Sales", "Discount", "Profit"]].hist(bins=30, figsize=(12, 6))
-# plt.suptitle("Histograma dos atributos numéricos")
-# plt.show()
 
-# # Gráficos de coluna dos atributos categóricos selecionados
-# colunas = ["Segment", "Country","City", "State", "Category", "Sub-Category"]
-# for col in colunas:
-#     plt.figure(figsize=(12, 6))
+
+# plt.figure(figsize=(20, 15))
+
+# # Histogramas
+# plt.subplot(2, 4, 1)
+# dados["Sales"].hist()
+# plt.title("Histograma Sales")
+
+# plt.subplot(2, 4, 2)
+# dados["Discount"].hist()
+# plt.title("Histograma Discount")
+
+# plt.subplot(2, 4, 3)
+# dados["Profit"].hist()
+# plt.title("Histograma Profit")
+
+# Gráficos categóricos
+# colunas = ["Segment", "Country", "State", "Category", "Sub-Category"]
+# for i, col in enumerate(colunas):
+#     plt.subplot(2, 4, i+4)
 #     sns.countplot(data=dados, x=col)
 #     plt.title(f"Contagem de {col}")
 #     plt.xticks(rotation=45)
-#     plt.show()
 
-plt.figure(figsize=(20, 15))
+# # Ajustar o layout
+# plt.tight_layout()
+# plt.show()
 
-# Histogramas
-plt.subplot(2, 4, 1)
-dados["Sales"].hist()
-plt.title("Histograma Sales")
 
-plt.subplot(2, 4, 2)
-dados["Discount"].hist()
-plt.title("Histograma Discount")
-
-plt.subplot(2, 4, 3)
-dados["Profit"].hist()
-plt.title("Histograma Profit")
-
-# Gráficos categóricos
-colunas = ["Segment", "Country", "State", "Category", "Sub-Category"]
-for i, col in enumerate(colunas):
-    plt.subplot(2, 4, i+4)
-    sns.countplot(data=dados, x=col)
-    plt.title(f"Contagem de {col}")
-    plt.xticks(rotation=45)
-
-# Ajustar o layout
-plt.tight_layout()
-plt.show()
 
 # Exportando o novo DataFrame para um arquivo CSV
-# dados.to_csv("relatorio_superstore_tratado2.csv", index=False, encoding='utf-8')
-# print("Relatório gerado: relatorio_superstore_tratado2.csv")
+dados.to_csv("relatorio_superstore_tratado2.csv", index=False, encoding='utf-8')
+print("Relatório gerado: relatorio_superstore_tratado2.csv")

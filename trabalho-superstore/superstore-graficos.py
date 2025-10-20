@@ -68,7 +68,7 @@ ax.set_xlabel('Sales')
 ax.set_ylabel('Discount')
 ax.set_zlabel('Profit')
 plt.title('Clusters de Produtos')
-# plt.show()
+plt.show()
 
 # Gráficos dos atributos numéricos e categóricos para cada cluster
 plt.figure(figsize=(20, 15))
@@ -80,7 +80,7 @@ for cluster in df['Cluster'].unique():
     plt.xlabel("Sales")
     plt.ylabel("Density")
 plt.tight_layout()
-# plt.show()
+plt.show()
 
 plt.figure(figsize=(20, 15))
 for cluster in df['Cluster'].unique():
@@ -91,7 +91,7 @@ for cluster in df['Cluster'].unique():
     plt.xlabel("Discount")
     plt.ylabel("Density")
 plt.tight_layout()
-# plt.show()
+plt.show()
 
 plt.figure(figsize=(20, 15))
 for cluster in df['Cluster'].unique():
@@ -102,7 +102,7 @@ for cluster in df['Cluster'].unique():
     plt.xlabel("Profit")
     plt.ylabel("Density")
 plt.tight_layout()
-# plt.show()
+plt.show()
 
 # # Gráficos categóricos para cada cluster
 colunas = ["Segment", "Country", "State", "Category", "Sub-Category"]
@@ -116,7 +116,7 @@ for col in colunas:
         plt.title(f"Cluster {cluster} - Contagem de {col}")
         plt.xticks(rotation=45)
     plt.tight_layout()
-    # plt.show()
+    plt.show()
 
 # Exportando o DataFrame com clusters para um arquivo CSV
 # df.to_csv("relatorio_superstore_com_clusters.csv", index=False, encoding='utf-8')
