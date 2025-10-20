@@ -1,0 +1,473 @@
+@relation VendaCarros
+
+@attribute DataNotaFiscal {04/10/2012,01/01/2012,02/02/2012,03/03/2012,04/04/2012,04/05/2012,04/06/2012,04/07/2012,04/08/2012,04/09/2012,04/11/2012,04/12/2012,02/01/2013,02/02/2013,02/03/2013,02/04/2013,02/05/2013,02/06/2013,02/07/2013,02/08/2013,02/09/2013,02/10/2013,02/11/2013,02/12/2013,01/02/2012,01/03/2012,01/04/2012,01/05/2012,01/06/2012,01/07/2012,01/08/2012,01/09/2012,01/10/2012,01/11/2012,01/12/2012,09/01/2013,10/01/2013,11/02/2013,12/03/2013,13/03/2013,14/03/2013,15/04/2013,16/04/2013,17/05/2013,18/05/2013,19/05/2013,20/06/2013,21/07/2013,22/07/2013,23/09/2013,24/10/2013,25/11/2013,26/11/2013,27/11/2013,04/10/2014,01/01/2014,02/02/2014,03/03/2014,04/04/2014,04/05/2014,04/06/2014,04/07/2014,04/08/2014,04/09/2014,04/11/2014,04/12/2014,02/01/2015,02/02/2015,02/03/2015,02/04/2015,02/05/2015,02/06/2015,02/07/2015,02/08/2015,02/09/2015,02/10/2015,02/11/2015,02/12/2015,01/02/2014,01/03/2014,01/04/2014,01/05/2014,01/06/2014,01/07/2014,01/08/2014,01/09/2014,01/10/2014,01/11/2014,01/12/2014,09/01/2015,10/01/2015,11/02/2015,12/03/2015,13/03/2015,14/03/2015,15/04/2015,16/04/2015,17/05/2015,18/05/2015,19/05/2015,20/06/2015,21/07/2015,22/07/2015,23/09/2015,24/10/2015,25/11/2015,26/11/2015,27/11/2015}
+@attribute Fabricante {'Rolls Royce','Aston Martin',Jaguar,Bentley,TVR,MGB,Triumph}
+@attribute Estado {'São Paulo','Minas Gerais','Rio de Janeiro','Espírito Santo',Paraná,Bahia}
+@attribute ValorVenda numeric
+@attribute ValorCusto numeric
+@attribute TotalDesconto numeric
+@attribute CustoEntrega numeric
+@attribute CustoMaoDeObra numeric
+@attribute NomeCliente {'Aldo Motors','Honest John','Bright Orange',WheelsRUs,CunShut,'Les Arnaqueurs','Rocky Riding','Voitures Diplomatiques S.A.','Crippen & Co','Costa Del Speed',Karz,'Olde Englande','Impressive Wheels','Smooth Riders','Luxury Rentals','Premium Motor Vehicles','Chateau Moi','Vive la Vitesse!','Carosse Des Papes','Three Country Cars',Jungfrau,'Ambassador Cars','Embassy Motors','Style ‘N Ride','Sporty Types Corp',BritWheels,'Tweedy Wheels','Union Jack Sports Cars','British Luxury Automobile Corp','Buckingham Palace Car Services','Classy Car Sales'}
+@attribute Modelo {Camargue,DBS,'Prata Ghost',DB7,DB9,DB4,Vantage,Vanquish,Rapide,Zagato,Wraith,'Prata Shadow','Prata Seraph',Phantom,XK,XJ6,XJ12,Continental,Arnage,Azure,'Turbo R',Tuscan,Cerbera,GT,TR4,TR5,TR7}
+@attribute Cor {Vermelho,Azul,Verde,Prata,Púrpura,Preto}
+@attribute Ano numeric
+
+@data
+04/10/2012,'Rolls Royce','São Paulo',95000,50000,500,750,750,'Aldo Motors',Camargue,Vermelho,2012
+01/01/2012,'Aston Martin','São Paulo',120000,75000,0,1500,550,'Honest John',DBS,Azul,2012
+02/02/2012,'Rolls Royce','São Paulo',88000,75000,750,1000,550,'Bright Orange','Prata Ghost',Verde,2012
+03/03/2012,'Rolls Royce','São Paulo',89000,88000,0,1000,550,'Honest John','Prata Ghost',Azul,2012
+04/04/2012,'Rolls Royce','São Paulo',92000,62000,0,1500,550,WheelsRUs,Camargue,Prata,2012
+04/05/2012,'Rolls Royce','São Paulo',102500,125000,0,1000,550,CunShut,Camargue,Verde,2012
+04/06/2012,'Aston Martin','São Paulo',110000,56000,750,500,550,'Bright Orange',DBS,Púrpura,2012
+04/07/2012,'Aston Martin','Minas Gerais',125000,23500,2500,1000,550,'Les Arnaqueurs',DB7,Vermelho,2012
+04/08/2012,'Aston Martin','São Paulo',130000,15500,0,1000,750,'Aldo Motors',DB9,Azul,2012
+04/09/2012,'Aston Martin','São Paulo',75000,75890,0,1000,750,'Aldo Motors',DB9,Prata,2012
+04/09/2012,'Aston Martin','São Paulo',68500,99000,0,1000,750,'Aldo Motors',DB4,Azul,2012
+04/11/2012,'Aston Martin','Minas Gerais',95000,125000,0,1500,750,'Les Arnaqueurs',Vantage,Prata,2012
+04/11/2012,'Aston Martin','São Paulo',155000,125000,0,1500,750,WheelsRUs,Vanquish,Azul,2012
+04/12/2012,'Aston Martin','São Paulo',95000,155000,5000,1500,570,'Bright Orange',Rapide,Preto,2012
+04/12/2012,'Aston Martin','São Paulo',178500,125000,0,1500,570,CunShut,Zagato,Verde,2012
+02/01/2013,'Rolls Royce','Minas Gerais',130000,62000,0,1750,570,'Les Arnaqueurs','Prata Ghost',Prata,2013
+02/02/2013,'Rolls Royce','São Paulo',178500,62000,0,1750,654,WheelsRUs,Wraith,Prata,2013
+02/03/2013,'Rolls Royce','São Paulo',110000,75890,0,990,987,CunShut,'Prata Ghost',Verde,2013
+02/04/2013,'Rolls Royce','São Paulo',130000,62000,0,500,654,'Bright Orange',Camargue,Azul,2013
+02/05/2013,'Rolls Royce','São Paulo',178500,75890,950,1750,321,'Honest John','Prata Shadow',Vermelho,2013
+02/06/2013,'Rolls Royce','São Paulo',110000,62000,0,1750,951,'Aldo Motors','Prata Seraph',Vermelho,2013
+02/07/2013,'Rolls Royce','São Paulo',102500,62000,1750,500,987,'Aldo Motors','Prata Ghost',Preto,2013
+02/08/2013,'Rolls Royce','São Paulo',130000,62000,0,1000,750,'Honest John','Prata Shadow',Verde,2013
+02/09/2013,'Rolls Royce','São Paulo',178500,75890,0,450,654,'Bright Orange',Camargue,Púrpura,2013
+02/10/2013,'Rolls Royce','São Paulo',178500,75890,0,1750,987,WheelsRUs,'Prata Seraph',Vermelho,2013
+02/11/2013,'Rolls Royce','São Paulo',130000,75890,750,1750,321,CunShut,'Prata Ghost',Vermelho,2013
+02/12/2013,'Rolls Royce','São Paulo',178500,62000,0,1750,654,WheelsRUs,Phantom,Verde,2013
+02/01/2013,'Aston Martin','São Paulo',178500,75890,0,500,987,WheelsRUs,DB9,Púrpura,2013
+02/02/2013,'Aston Martin','São Paulo',110000,75890,0,500,963,CunShut,DB4,Verde,2013
+02/03/2013,'Aston Martin','São Paulo',178500,75890,0,500,852,CunShut,DB9,Preto,2013
+02/04/2013,'Aston Martin','São Paulo',110000,75890,0,0,147,'Bright Orange',DB4,Azul,2013
+02/05/2013,'Aston Martin','São Paulo',102500,75890,0.01,500,852,'Bright Orange',DB4,Prata,2013
+02/06/2013,'Aston Martin','São Paulo',178500,62000,750,450,654,'Honest John',Vanquish,Prata,2013
+02/07/2013,'Aston Martin','São Paulo',124500,62000,1000,450,984,'Aldo Motors',Vanquish,Verde,2013
+02/08/2013,'Aston Martin','São Paulo',130000,62000,1250,450,895,'Aldo Motors',DB9,Azul,2013
+02/09/2013,'Aston Martin','São Paulo',110000,62000,0,0,486,'Honest John',DB9,Azul,2013
+02/10/2013,'Aston Martin','São Paulo',178500,62000,0,450,325,'Bright Orange',Vanquish,Vermelho,2013
+02/11/2013,'Aston Martin','São Paulo',130000,125000,0,1750,658,WheelsRUs,Rapide,Vermelho,2013
+02/12/2013,'Aston Martin','São Paulo',110000,125000,0,1750,752,CunShut,Vanquish,Vermelho,2013
+01/01/2012,Jaguar,'Rio de Janeiro',44000,25000,500,450,486,'Rocky Riding',XK,Púrpura,2012
+01/02/2012,Jaguar,'Rio de Janeiro',45000,37500,500,450,486,'Rocky Riding',XJ6,Verde,2012
+01/03/2012,Jaguar,'Espírito Santo',39500,25000,500,0,486,'Voitures Diplomatiques S.A.',XJ12,Preto,2012
+01/04/2012,Jaguar,'Minas Gerais',44000,37500,500,500,486,'Les Arnaqueurs',XK,Prata,2012
+01/05/2012,Jaguar,'São Paulo',44000,25000,500,500,486,'Bright Orange',XJ12,Prata,2012
+01/06/2012,Jaguar,'São Paulo',39500,37500,500,500,486,'Honest John',XK,Azul,2012
+01/07/2012,Jaguar,'São Paulo',44000,25000,500,1750,486,WheelsRUs,XK,Verde,2012
+01/08/2012,Jaguar,'São Paulo',110000,50000,750,500,486,CunShut,XJ12,Azul,2012
+01/09/2012,Jaguar,'Rio de Janeiro',110000,25000,750,1750,987,'Rocky Riding',XJ12,Prata,2012
+01/10/2012,Jaguar,'Espírito Santo',44000,37500,750,1750,987,'Voitures Diplomatiques S.A.',XJ6,Verde,2012
+01/11/2012,Jaguar,'São Paulo',39500,25000,0,500,987,'Aldo Motors',XK,Púrpura,2012
+01/12/2012,Jaguar,'São Paulo',44000,37500,0,500,987,'Aldo Motors',XK,Preto,2012
+02/01/2013,Jaguar,'São Paulo',44000,25000,0,1750,987,'Honest John',XK,Verde,2013
+02/02/2013,Jaguar,'São Paulo',44000,37500,0,500,987,'Bright Orange',XK,Púrpura,2013
+02/03/2013,Jaguar,'São Paulo',39500,25000,750,500,987,CunShut,XJ6,Vermelho,2013
+02/04/2013,Jaguar,'São Paulo',110000,37500,750,500,987,WheelsRUs,XJ6,Vermelho,2013
+02/05/2013,Jaguar,'São Paulo',44000,25000,750,500,987,'Crippen & Co',XJ6,Vermelho,2013
+02/06/2013,Jaguar,'Espírito Santo',39500,37500,500,450,987,'Voitures Diplomatiques S.A.',XK,Púrpura,2013
+02/07/2013,Jaguar,'Rio de Janeiro',39500,25000,500,450,750,'Rocky Riding',XK,Verde,2013
+02/08/2013,Jaguar,'São Paulo',39500,12500,500,450,750,'Crippen & Co',XK,Preto,2013
+02/09/2013,Jaguar,'Minas Gerais',39500,25000,500,500,750,'Les Arnaqueurs',XK,Azul,2013
+02/10/2013,Jaguar,'São Paulo',39500,37500,750,500,750,WheelsRUs,XK,Prata,2013
+02/11/2013,Jaguar,'São Paulo',39500,25000,750,500,1250,WheelsRUs,XK,Prata,2013
+02/12/2013,Jaguar,'São Paulo',39500,37500,750,500,1250,CunShut,XJ6,Verde,2013
+01/01/2012,Bentley,'São Paulo',39500,25700,750,500,1250,CunShut,Continental,Azul,2012
+01/02/2012,Bentley,'São Paulo',44000,25700,750,500,1250,'Bright Orange',Arnage,Azul,2012
+01/03/2012,Bentley,'São Paulo',44000,25700,750,500,987,'Bright Orange',Azure,Vermelho,2012
+01/04/2012,Bentley,'São Paulo',110000,25700,750,775,1250,'Honest John','Turbo R',Vermelho,2012
+01/05/2012,Bentley,'São Paulo',110000,62000,750,775,987,'Honest John',Continental,Prata,2012
+01/06/2012,Bentley,'São Paulo',110000,62000,500,775,1250,'Aldo Motors',Continental,Púrpura,2012
+01/07/2012,Bentley,'São Paulo',110000,25700,500,775,987,'Aldo Motors',Continental,Verde,2012
+01/08/2012,Bentley,'Espírito Santo',110000,25700,500,775,1250,'Voitures Diplomatiques S.A.',Azure,Preto,2012
+01/09/2012,Bentley,'Rio de Janeiro',44000,25700,500,775,987,'Rocky Riding','Turbo R',Prata,2012
+01/10/2012,Bentley,'Minas Gerais',110000,62000,500,500,1250,'Les Arnaqueurs',Continental,Prata,2012
+01/11/2012,Bentley,'São Paulo',44000,62000,500,450,987,'Aldo Motors',Continental,Prata,2012
+01/12/2012,Bentley,'São Paulo',44000,62000,500,450,987,'Honest John',Continental,Azul,2012
+02/01/2013,Bentley,'São Paulo',110000,25700,500,450,1250,'Bright Orange',Continental,Azul,2013
+02/02/2013,Bentley,'São Paulo',110000,25700,500,500,750,CunShut,Continental,Verde,2013
+02/03/2013,Bentley,'São Paulo',41250,25700,500,775,750,WheelsRUs,Azure,Azul,2013
+02/04/2013,Bentley,'Minas Gerais',110000,25700,500,775,750,'Les Arnaqueurs','Turbo R',Vermelho,2013
+02/05/2013,Bentley,'São Paulo',39500,62000,500,775,750,'Crippen & Co','Turbo R',Vermelho,2013
+02/06/2013,Bentley,'Rio de Janeiro',39500,62000,500,500,486,'Rocky Riding',Continental,Vermelho,2013
+02/07/2013,Bentley,'São Paulo',39500,25700,500,500,486,'Aldo Motors',Continental,Púrpura,2013
+02/08/2013,Bentley,'São Paulo',41250,62000,500,775,486,'Honest John',Continental,Púrpura,2013
+02/09/2013,Bentley,'Minas Gerais',39500,62000,1250,450,486,'Les Arnaqueurs',Continental,Verde,2013
+02/10/2013,Bentley,'São Paulo',44000,62000,1000,450,486,WheelsRUs,Continental,Preto,2013
+02/11/2013,Bentley,'São Paulo',44000,25700,1000,450,486,'Honest John',Azure,Azul,2013
+02/12/2013,Bentley,'São Paulo',44000,25700,1000,450,486,'Aldo Motors','Turbo R',Prata,2013
+02/01/2013,Jaguar,Paraná,29750,37500,150,50,486,'Costa Del Speed',XK,Vermelho,2013
+02/02/2013,TVR,Bahia,41250,37500,150,50,325,Karz,Tuscan,Azul,2013
+02/03/2013,Jaguar,Paraná,39500,37500,150,50,325,'Costa Del Speed',XK,Verde,2013
+02/04/2013,TVR,Bahia,29750,37500,150,50,325,Karz,Cerbera,Prata,2013
+02/05/2013,Jaguar,'Espírito Santo',120000,37500,150,50,325,'Voitures Diplomatiques S.A.',XK,Prata,2013
+02/06/2013,TVR,'Rio de Janeiro',29750,37500,150,50,325,'Rocky Riding',Tuscan,Azul,2013
+02/07/2013,Jaguar,'São Paulo',41250,37500,150,50,325,'Honest John',XK,Prata,2013
+02/08/2013,TVR,'Minas Gerais',29750,37500,150,50,325,'Les Arnaqueurs',Cerbera,Prata,2013
+02/09/2013,Jaguar,'São Paulo',39500,37500,150,50,325,WheelsRUs,XK,Verde,2013
+02/10/2013,TVR,'Rio de Janeiro',41250,37500,150,50,325,'Rocky Riding',Tuscan,Azul,2013
+02/11/2013,Jaguar,'São Paulo',29750,37500,150,50,325,WheelsRUs,XK,Azul,2013
+02/12/2013,Jaguar,'São Paulo',41250,37500,150,50,325,'Bright Orange',XJ6,Azul,2013
+02/01/2013,Jaguar,'São Paulo',39500,25700,150,50,250,'Olde Englande',XJ6,Púrpura,2013
+02/02/2013,Jaguar,'São Paulo',39500,25700,150,50,250,'Impressive Wheels',XJ6,Verde,2013
+02/03/2013,Jaguar,'São Paulo',39500,25700,150,50,250,'Olde Englande',XJ6,Preto,2013
+02/04/2013,Jaguar,'São Paulo',39500,62000,150,50,250,'Smooth Riders',XK,Azul,2013
+02/05/2013,Jaguar,'São Paulo',41250,62000,150,50,250,'Luxury Rentals',XK,Prata,2013
+02/06/2013,Jaguar,'São Paulo',41250,25700,150,50,250,'Premium Motor Vehicles',XJ6,Prata,2013
+02/07/2013,Jaguar,'São Paulo',39500,25700,150,50,250,'Luxury Rentals',XJ6,Prata,2013
+02/08/2013,Jaguar,'São Paulo',39500,25700,150,50,250,'Aldo Motors',XK,Prata,2013
+02/09/2013,Jaguar,'São Paulo',39500,62000,150,50,250,'Honest John',XK,Prata,2013
+02/10/2013,Jaguar,'São Paulo',39500,25700,150,50,250,'Honest John',XJ6,Prata,2013
+02/11/2013,Jaguar,'São Paulo',41250,62000,150,50,250,'Bright Orange',XK,Azul,2013
+02/12/2013,Jaguar,'São Paulo',41250,62000,150,50,250,CunShut,XK,Azul,2013
+02/01/2013,MGB,'São Paulo',39500,4500,150,50,325,WheelsRUs,GT,Verde,2013
+02/02/2013,MGB,'São Paulo',39500,8500,150,50,325,'Olde Englande',GT,Verde,2013
+02/03/2013,MGB,'São Paulo',25250,4500,150,50,325,WheelsRUs,GT,Vermelho,2013
+02/04/2013,MGB,'São Paulo',22500,8500,150,50,325,WheelsRUs,GT,Vermelho,2013
+02/05/2013,MGB,'São Paulo',22500,4500,150,50,325,CunShut,GT,Vermelho,2013
+02/06/2013,MGB,'São Paulo',22500,8500,150,50,325,CunShut,GT,Vermelho,2013
+02/07/2013,MGB,'São Paulo',25250,4500,150,50,325,'Bright Orange',GT,Azul,2013
+02/08/2013,MGB,'São Paulo',22500,8500,150,50,325,'Honest John',GT,Verde,2013
+02/09/2013,MGB,'São Paulo',25250,4500,150,50,325,'Aldo Motors',GT,Prata,2013
+02/10/2013,MGB,'São Paulo',22500,8500,150,50,325,'Honest John',GT,Prata,2013
+02/11/2013,MGB,'São Paulo',25250,4500,150,50,325,'Bright Orange',GT,Azul,2013
+02/12/2013,MGB,'São Paulo',22500,4500,150,50,325,'Aldo Motors',GT,Verde,2013
+02/01/2013,Triumph,'São Paulo',22500,8500,150,50,325,'Luxury Rentals',TR4,Preto,2013
+02/02/2013,Triumph,'São Paulo',25250,17000,150,50,325,'Smooth Riders',TR5,Púrpura,2013
+02/03/2013,Triumph,'São Paulo',22500,8500,150,50,325,'Honest John',TR7,Verde,2013
+02/04/2013,Triumph,'São Paulo',22500,17000,150,50,325,'Impressive Wheels',TR4,Azul,2013
+02/05/2013,Triumph,'São Paulo',22500,8500,150,50,325,'Bright Orange',TR4,Prata,2013
+02/06/2013,Triumph,Paraná,22500,17000,150,50,325,'Costa Del Speed',TR5,Prata,2013
+02/07/2013,Triumph,'São Paulo',25250,17000,150,50,325,CunShut,TR5,Azul,2013
+02/08/2013,Triumph,'São Paulo',22500,17000,150,50,325,WheelsRUs,TR4,Azul,2013
+02/09/2013,Triumph,'São Paulo',25250,17000,150,50,325,'Olde Englande',TR4,Vermelho,2013
+02/10/2013,Triumph,'São Paulo',25250,17000,150,50,325,'Impressive Wheels',TR7,Vermelho,2013
+02/11/2013,Triumph,'São Paulo',25250,17000,150,50,325,CunShut,TR4,Verde,2013
+02/12/2013,Triumph,'São Paulo',25250,17000,150,50,450,'Bright Orange',TR5,Prata,2013
+09/01/2013,'Aston Martin','Minas Gerais',74500,31125,500,975,1250,'Chateau Moi',DB7,Vermelho,2013
+10/01/2013,'Aston Martin','Minas Gerais',69250,17500,1250,975,1250,'Vive la Vitesse!',DB7,Azul,2013
+11/02/2013,'Aston Martin','Minas Gerais',22750,22500,500,975,950,'Carosse Des Papes',Vantage,Verde,2013
+12/03/2013,'Aston Martin','Espírito Santo',37000,17500,1000,975,1250,'Three Country Cars',Vantage,Prata,2013
+13/03/2013,'Rolls Royce','Espírito Santo',74500,31125,750,975,1250,Jungfrau,Camargue,Prata,2013
+14/03/2013,'Aston Martin','Minas Gerais',45800,17500,1000,975,950,'Chateau Moi',DB7,Azul,2013
+15/04/2013,'Rolls Royce','Minas Gerais',22750,22500,2500,350,1250,'Vive la Vitesse!',Camargue,Preto,2013
+16/04/2013,'Aston Martin','Minas Gerais',45800,17500,1250,350,1250,'Carosse Des Papes',Vantage,Vermelho,2013
+17/05/2013,'Aston Martin','Espírito Santo',37000,17500,1000,350,1250,'Three Country Cars',DB7,Azul,2013
+18/05/2013,'Aston Martin','Espírito Santo',45800,17500,500,975,1250,Jungfrau,Vantage,Verde,2013
+19/05/2013,'Aston Martin','Minas Gerais',37690,22500,1000,975,950,'Chateau Moi',DB7,Prata,2013
+20/06/2013,'Aston Martin','Minas Gerais',74500,17500,2500,975,1250,'Vive la Vitesse!',Vantage,Prata,2013
+21/07/2013,'Rolls Royce','Minas Gerais',45800,17500,1250,975,1250,'Carosse Des Papes',Camargue,Azul,2013
+22/07/2013,'Aston Martin','Espírito Santo',37000,22500,1000,275,1250,'Three Country Cars',DB7,Preto,2013
+23/09/2013,'Aston Martin','Espírito Santo',37690,17500,1250,275,1250,Jungfrau,DB9,Vermelho,2013
+24/10/2013,'Rolls Royce','Espírito Santo',69250,17500,500,275,950,Jungfrau,Camargue,Azul,2013
+25/11/2013,'Aston Martin','Minas Gerais',37690,31125,1000,975,1250,'Vive la Vitesse!',DB9,Verde,2013
+26/11/2013,'Aston Martin','Espírito Santo',74500,17500,750,975,1250,Jungfrau,DB7,Prata,2013
+27/11/2013,'Aston Martin','Minas Gerais',37690,17500,500,975,1250,'Carosse Des Papes',DB9,Prata,2013
+04/10/2014,'Rolls Royce','São Paulo',97750,55000,550,725,750,'Aldo Motors',Camargue,Prata,2014
+01/01/2014,'Aston Martin','São Paulo',122750,80000,50,1475,550,'Honest John',DBS,Azul,2014
+02/02/2014,'Rolls Royce','São Paulo',90750,80000,800,975,550,'Bright Orange','Prata Ghost',Verde,2014
+03/03/2014,'Rolls Royce','São Paulo',91750,93000,50,975,550,'Honest John','Prata Ghost',Azul,2014
+04/04/2014,'Rolls Royce','São Paulo',94750,67000,50,1475,550,WheelsRUs,Camargue,Prata,2014
+04/05/2014,'Rolls Royce','São Paulo',105250,130000,50,975,550,CunShut,Camargue,Verde,2014
+04/06/2014,'Aston Martin','São Paulo',112750,61000,800,475,550,'Bright Orange',DBS,Púrpura,2014
+04/07/2014,'Aston Martin','Minas Gerais',127750,28500,2550,975,550,'Les Arnaqueurs',DB7,Vermelho,2014
+04/08/2014,'Aston Martin','São Paulo',132750,20500,50,975,750,'Aldo Motors',DB9,Azul,2014
+04/09/2014,'Aston Martin','São Paulo',77750,80890,50,975,750,'Aldo Motors',DB9,Prata,2014
+04/11/2014,'Aston Martin','Minas Gerais',71250,104000,50,1475,750,'Les Arnaqueurs',DB4,Azul,2014
+04/11/2014,'Aston Martin','São Paulo',97750,130000,50,1475,750,WheelsRUs,Vantage,Prata,2014
+04/12/2014,'Aston Martin','São Paulo',157750,130000,5050,1475,750,'Bright Orange',Vanquish,Prata,2014
+04/12/2014,'Aston Martin','São Paulo',97750,160000,50,1475,570,CunShut,Rapide,Preto,2014
+02/01/2015,'Aston Martin','Minas Gerais',181250,130000,50,1725,570,'Les Arnaqueurs',Zagato,Verde,2015
+02/02/2015,'Rolls Royce','São Paulo',132750,67000,50,1725,570,WheelsRUs,'Prata Ghost',Prata,2015
+02/03/2015,'Rolls Royce','São Paulo',181250,67000,50,965,654,CunShut,Wraith,Prata,2015
+02/04/2015,'Rolls Royce','São Paulo',112750,80890,50,475,987,'Bright Orange','Prata Ghost',Verde,2015
+02/05/2015,'Rolls Royce','São Paulo',132750,67000,1000,1725,654,'Honest John',Camargue,Preto,2015
+02/06/2015,'Rolls Royce','São Paulo',181250,80890,50,1725,321,'Aldo Motors','Prata Shadow',Vermelho,2015
+02/07/2015,'Rolls Royce','São Paulo',112750,67000,1800,475,951,'Aldo Motors','Prata Seraph',Vermelho,2015
+02/08/2015,'Rolls Royce','São Paulo',105250,67000,50,975,987,'Honest John','Prata Ghost',Preto,2015
+02/09/2015,'Rolls Royce','São Paulo',132750,67000,50,425,750,'Bright Orange','Prata Shadow',Verde,2015
+02/10/2015,'Rolls Royce','São Paulo',181250,80890,50,1725,654,WheelsRUs,Camargue,Púrpura,2015
+02/11/2015,'Rolls Royce','São Paulo',181250,80890,800,1725,987,CunShut,'Prata Seraph',Preto,2015
+02/12/2015,'Rolls Royce','São Paulo',132750,80890,50,1725,321,WheelsRUs,'Prata Ghost',Vermelho,2015
+02/01/2015,'Rolls Royce','São Paulo',181250,67000,50,475,654,WheelsRUs,Phantom,Verde,2015
+02/02/2015,'Aston Martin','São Paulo',181250,80890,50,475,987,CunShut,DB9,Púrpura,2015
+02/03/2015,'Aston Martin','São Paulo',112750,80890,50,475,963,CunShut,DB4,Preto,2015
+02/04/2015,'Aston Martin','São Paulo',181250,80890,50,50,852,'Bright Orange',DB9,Preto,2015
+02/05/2015,'Aston Martin','São Paulo',112750,80890,50.01,475,147,'Bright Orange',DB4,Azul,2015
+02/06/2015,'Aston Martin','São Paulo',105250,80890,800,425,852,'Honest John',DB4,Prata,2015
+02/07/2015,'Aston Martin','São Paulo',181250,67000,1050,425,654,'Aldo Motors',Vanquish,Prata,2015
+02/08/2015,'Aston Martin','São Paulo',127250,67000,1300,425,984,'Aldo Motors',Vanquish,Verde,2015
+02/09/2015,'Aston Martin','São Paulo',132750,67000,50,75,895,'Honest John',DB9,Prata,2015
+02/10/2015,'Aston Martin','São Paulo',112750,67000,50,425,486,'Bright Orange',DB9,Azul,2015
+02/11/2015,'Aston Martin','São Paulo',181250,67000,50,1725,325,WheelsRUs,Vanquish,Vermelho,2015
+02/12/2015,'Aston Martin','São Paulo',132750,130000,50,1725,658,CunShut,Rapide,Vermelho,2015
+01/01/2014,'Aston Martin','Rio de Janeiro',112750,130000,550,425,752,'Rocky Riding',Vanquish,Vermelho,2014
+01/02/2014,Jaguar,'Rio de Janeiro',46750,30000,550,425,486,'Rocky Riding',XK,Púrpura,2014
+01/03/2014,Jaguar,'Espírito Santo',47750,42500,550,75,486,'Voitures Diplomatiques S.A.',XJ6,Verde,2014
+01/04/2014,Jaguar,'Minas Gerais',42250,30000,550,475,486,'Les Arnaqueurs',XJ12,Preto,2014
+01/05/2014,Jaguar,'São Paulo',46750,42500,550,475,486,'Bright Orange',XK,Prata,2014
+01/06/2014,Jaguar,'São Paulo',46750,30000,550,475,486,'Honest John',XJ12,Prata,2014
+01/07/2014,Jaguar,'São Paulo',42250,42500,550,1725,486,WheelsRUs,XK,Prata,2014
+01/08/2014,Jaguar,'São Paulo',46750,30000,800,475,486,CunShut,XK,Verde,2014
+01/09/2014,Jaguar,'Rio de Janeiro',112750,55000,800,1725,486,'Rocky Riding',XJ12,Azul,2014
+01/10/2014,Jaguar,'Espírito Santo',112750,30000,800,1725,987,'Voitures Diplomatiques S.A.',XJ12,Prata,2014
+01/11/2014,Jaguar,'São Paulo',46750,42500,50,475,987,'Aldo Motors',XJ6,Verde,2014
+01/12/2014,Jaguar,'São Paulo',42250,30000,50,475,987,'Aldo Motors',XK,Púrpura,2014
+02/01/2015,Jaguar,'São Paulo',46750,42500,50,1725,987,'Honest John',XK,Prata,2015
+02/02/2015,Jaguar,'São Paulo',46750,30000,50,475,987,'Bright Orange',XK,Verde,2015
+02/03/2015,Jaguar,'São Paulo',46750,42500,800,475,987,CunShut,XK,Púrpura,2015
+02/04/2015,Jaguar,'São Paulo',42250,30000,800,475,987,WheelsRUs,XJ6,Vermelho,2015
+02/05/2015,Jaguar,'São Paulo',112750,42500,800,475,987,'Crippen & Co',XJ6,Vermelho,2015
+02/06/2015,Jaguar,'Espírito Santo',46750,30000,550,425,987,'Voitures Diplomatiques S.A.',XJ6,Vermelho,2015
+02/07/2015,Jaguar,'Rio de Janeiro',42250,42500,550,425,987,'Rocky Riding',XK,Púrpura,2015
+02/08/2015,Jaguar,'São Paulo',42250,30000,550,425,750,'Crippen & Co',XK,Verde,2015
+02/09/2015,Jaguar,'Minas Gerais',42250,17500,550,475,750,'Les Arnaqueurs',XK,Preto,2015
+02/10/2015,Jaguar,'São Paulo',42250,30000,800,475,750,WheelsRUs,XK,Prata,2015
+02/11/2015,Jaguar,'São Paulo',42250,42500,800,475,750,WheelsRUs,XK,Prata,2015
+02/12/2015,Jaguar,'São Paulo',42250,30000,800,475,1250,CunShut,XK,Prata,2015
+01/01/2014,Jaguar,'São Paulo',42250,42500,800,475,1250,CunShut,XJ6,Verde,2014
+01/02/2014,Bentley,'São Paulo',42250,30700,800,475,1250,'Bright Orange',Continental,Azul,2014
+01/03/2014,Bentley,'São Paulo',46750,30700,800,475,1250,'Bright Orange',Arnage,Prata,2014
+01/04/2014,Bentley,'São Paulo',46750,30700,800,750,987,'Honest John',Azure,Vermelho,2014
+01/05/2014,Bentley,'São Paulo',112750,30700,800,750,1250,'Honest John','Turbo R',Vermelho,2014
+01/06/2014,Bentley,'São Paulo',112750,67000,550,750,987,'Aldo Motors',Continental,Prata,2014
+01/07/2014,Bentley,'São Paulo',112750,67000,550,750,1250,'Aldo Motors',Continental,Prata,2014
+01/08/2014,Bentley,'Espírito Santo',112750,30700,550,750,987,'Voitures Diplomatiques S.A.',Continental,Verde,2014
+01/09/2014,Bentley,'Rio de Janeiro',112750,30700,550,750,1250,'Rocky Riding',Azure,Preto,2014
+01/10/2014,Bentley,'Minas Gerais',46750,30700,550,475,987,'Les Arnaqueurs','Turbo R',Prata,2014
+01/11/2014,Bentley,'São Paulo',112750,67000,550,425,1250,'Aldo Motors',Continental,Prata,2014
+01/12/2014,Bentley,'São Paulo',46750,67000,550,425,987,'Honest John',Continental,Prata,2014
+02/01/2015,Bentley,'São Paulo',46750,67000,550,425,987,'Bright Orange',Continental,Azul,2015
+02/02/2015,Bentley,'São Paulo',112750,30700,550,475,1250,CunShut,Continental,Azul,2015
+02/03/2015,Bentley,'São Paulo',112750,30700,550,750,750,WheelsRUs,Continental,Verde,2015
+02/04/2015,Bentley,'Minas Gerais',44000,30700,550,750,750,'Les Arnaqueurs',Azure,Azul,2015
+02/05/2015,Bentley,'São Paulo',112750,30700,550,750,750,'Crippen & Co','Turbo R',Vermelho,2015
+02/06/2015,Bentley,'Rio de Janeiro',42250,67000,550,475,750,'Rocky Riding','Turbo R',Vermelho,2015
+02/07/2015,Bentley,'São Paulo',42250,67000,550,475,486,'Aldo Motors',Continental,Vermelho,2015
+02/08/2015,Bentley,'São Paulo',42250,30700,550,750,486,'Honest John',Continental,Púrpura,2015
+02/09/2015,Bentley,'Minas Gerais',44000,67000,1300,425,486,'Les Arnaqueurs',Continental,Púrpura,2015
+02/10/2015,Bentley,'São Paulo',42250,67000,1050,425,486,WheelsRUs,Continental,Verde,2015
+02/11/2015,Bentley,'São Paulo',46750,67000,1050,425,486,'Honest John',Continental,Preto,2015
+02/12/2015,Bentley,'São Paulo',46750,30700,1050,425,486,'Aldo Motors',Azure,Azul,2015
+02/01/2015,Bentley,Paraná,46750,30700,200,25,486,'Costa Del Speed','Turbo R',Prata,2015
+02/02/2015,Jaguar,Bahia,32500,42500,200,25,486,Karz,XK,Vermelho,2015
+02/03/2015,TVR,Paraná,44000,42500,200,25,325,'Costa Del Speed',Tuscan,Azul,2015
+02/04/2015,Jaguar,Bahia,42250,42500,200,25,325,Karz,XK,Verde,2015
+02/05/2015,TVR,'Espírito Santo',32500,42500,200,25,325,'Voitures Diplomatiques S.A.',Cerbera,Prata,2015
+02/06/2015,Jaguar,'Rio de Janeiro',122750,42500,200,25,325,'Rocky Riding',XK,Prata,2015
+02/07/2015,TVR,'São Paulo',32500,42500,200,25,325,'Honest John',Tuscan,Azul,2015
+02/08/2015,Jaguar,'Minas Gerais',44000,42500,200,25,325,'Les Arnaqueurs',XK,Prata,2015
+02/09/2015,TVR,'São Paulo',32500,42500,200,25,325,WheelsRUs,Cerbera,Prata,2015
+02/10/2015,Jaguar,'Rio de Janeiro',42250,42500,200,25,325,'Rocky Riding',XK,Vermelho,2015
+02/11/2015,TVR,'São Paulo',44000,42500,200,25,325,WheelsRUs,Tuscan,Azul,2015
+02/12/2015,Jaguar,'São Paulo',32500,42500,200,25,325,'Bright Orange',XK,Azul,2015
+02/01/2015,Jaguar,'São Paulo',44000,42500,200,25,325,'Olde Englande',XJ6,Azul,2015
+02/02/2015,Jaguar,'São Paulo',42250,30700,200,25,250,'Impressive Wheels',XJ6,Púrpura,2015
+02/03/2015,Jaguar,'São Paulo',42250,30700,200,25,250,'Olde Englande',XJ6,Verde,2015
+02/04/2015,Jaguar,'São Paulo',42250,30700,200,25,250,'Smooth Riders',XJ6,Preto,2015
+02/05/2015,Jaguar,'São Paulo',42250,67000,200,25,250,'Luxury Rentals',XK,Vermelho,2015
+02/06/2015,Jaguar,'São Paulo',44000,67000,200,25,250,'Premium Motor Vehicles',XK,Prata,2015
+02/07/2015,Jaguar,'São Paulo',44000,30700,200,25,250,'Luxury Rentals',XJ6,Prata,2015
+02/08/2015,Jaguar,'São Paulo',42250,30700,200,25,250,'Aldo Motors',XJ6,Prata,2015
+02/09/2015,Jaguar,'São Paulo',42250,30700,200,25,250,'Honest John',XK,Prata,2015
+02/10/2015,Jaguar,'São Paulo',42250,67000,200,25,250,'Honest John',XK,Prata,2015
+02/11/2015,Jaguar,'São Paulo',42250,30700,200,25,250,'Bright Orange',XJ6,Prata,2015
+02/12/2015,Jaguar,'São Paulo',44000,67000,200,25,250,CunShut,XK,Azul,2015
+02/01/2015,Jaguar,'São Paulo',44000,67000,200,25,250,WheelsRUs,XK,Azul,2015
+02/02/2015,MGB,'São Paulo',42250,9500,200,25,325,'Olde Englande',GT,Vermelho,2015
+02/03/2015,MGB,'São Paulo',42250,13500,200,25,325,WheelsRUs,GT,Verde,2015
+02/04/2015,MGB,'São Paulo',28000,9500,200,25,325,WheelsRUs,GT,Vermelho,2015
+02/05/2015,MGB,'São Paulo',25250,13500,200,25,325,CunShut,GT,Vermelho,2015
+02/06/2015,MGB,'São Paulo',25250,9500,200,50,325,CunShut,GT,Vermelho,2015
+02/07/2015,MGB,'São Paulo',25250,13500,200,25,325,'Bright Orange',GT,Vermelho,2015
+02/08/2015,MGB,'São Paulo',28000,9500,200,25,325,'Honest John',GT,Azul,2015
+02/09/2015,MGB,'São Paulo',25250,13500,200,25,325,'Aldo Motors',GT,Verde,2015
+02/10/2015,MGB,'São Paulo',28000,9500,200,50,325,'Honest John',GT,Prata,2015
+02/11/2015,MGB,'São Paulo',25250,13500,200,25,325,'Bright Orange',GT,Prata,2015
+02/12/2015,MGB,'São Paulo',28000,9500,200,25,325,'Aldo Motors',GT,Azul,2015
+02/01/2015,MGB,'São Paulo',25250,9500,200,25,325,'Luxury Rentals',GT,Verde,2015
+02/02/2015,Triumph,'São Paulo',25250,13500,200,25,325,'Smooth Riders',TR4,Preto,2015
+02/03/2015,Triumph,'São Paulo',28000,22000,200,25,325,'Honest John',TR5,Púrpura,2015
+02/04/2015,Triumph,'São Paulo',25250,13500,200,50,325,'Impressive Wheels',TR7,Verde,2015
+02/05/2015,Triumph,'São Paulo',25250,22000,200,25,325,'Bright Orange',TR4,Azul,2015
+02/06/2015,Triumph,Paraná,25250,13500,200,25,325,'Costa Del Speed',TR4,Prata,2015
+02/07/2015,Triumph,'São Paulo',25250,22000,200,25,325,CunShut,TR5,Prata,2015
+02/08/2015,Triumph,'São Paulo',28000,22000,200,50,325,WheelsRUs,TR5,Azul,2015
+02/09/2015,Triumph,'São Paulo',25250,22000,200,25,325,'Olde Englande',TR4,Azul,2015
+02/10/2015,Triumph,'São Paulo',28000,22000,200,25,325,'Impressive Wheels',TR4,Vermelho,2015
+02/11/2015,Triumph,'São Paulo',28000,22000,200,25,325,CunShut,TR7,Vermelho,2015
+02/12/2015,Triumph,'São Paulo',28000,22000,200,25,325,'Bright Orange',TR4,Verde,2015
+09/01/2015,Triumph,'Minas Gerais',28000,22000,550,950,450,'Chateau Moi',TR5,Prata,2015
+10/01/2015,'Aston Martin','Minas Gerais',77250,36125,1300,950,1250,'Vive la Vitesse!',DB7,Vermelho,2015
+11/02/2015,'Aston Martin','Minas Gerais',72000,22500,550,950,1250,'Carosse Des Papes',DB7,Azul,2015
+12/03/2015,'Aston Martin','Espírito Santo',25500,27500,1050,950,950,'Three Country Cars',Vantage,Verde,2015
+13/03/2015,'Aston Martin','Espírito Santo',39750,22500,800,950,1250,Jungfrau,Vantage,Prata,2015
+14/03/2015,'Rolls Royce','Minas Gerais',77250,36125,1050,950,1250,'Chateau Moi',Camargue,Prata,2015
+15/04/2015,'Aston Martin','Minas Gerais',48550,22500,2550,325,950,'Vive la Vitesse!',DB7,Azul,2015
+16/04/2015,'Rolls Royce','Minas Gerais',25500,27500,1300,325,1250,'Carosse Des Papes',Camargue,Preto,2015
+17/05/2015,'Aston Martin','Espírito Santo',48550,22500,1050,325,1250,'Three Country Cars',Vantage,Vermelho,2015
+18/05/2015,'Aston Martin','Espírito Santo',39750,22500,550,950,1250,Jungfrau,DB7,Azul,2015
+19/05/2015,'Aston Martin','Minas Gerais',48550,22500,1050,0,1250,'Chateau Moi',Vantage,Verde,2015
+20/06/2015,'Aston Martin','Minas Gerais',40440,27500,2550,950,950,'Vive la Vitesse!',DB7,Prata,2015
+21/07/2015,'Aston Martin','Minas Gerais',77250,22500,1300,950,1250,'Carosse Des Papes',Vantage,Prata,2015
+22/07/2015,'Rolls Royce','Espírito Santo',48550,22500,1050,250,1250,'Three Country Cars',Camargue,Púrpura,2015
+23/09/2015,'Aston Martin','Espírito Santo',39750,27500,1300,0,1250,Jungfrau,DB7,Preto,2015
+24/10/2015,'Aston Martin','Espírito Santo',40440,22500,550,250,1250,Jungfrau,DB9,Vermelho,2015
+25/11/2015,'Rolls Royce','Minas Gerais',72000,22500,1050,0,950,'Vive la Vitesse!',Camargue,Azul,2015
+26/11/2015,'Aston Martin','Espírito Santo',40440,36125,800,950,1250,Jungfrau,DB9,Verde,2015
+27/11/2015,'Aston Martin','Minas Gerais',77250,22500,550,950,1250,'Carosse Des Papes',DB7,Prata,2015
+04/10/2014,'Aston Martin','Rio de Janeiro',40440,22500,550,650,1250,'Ambassador Cars',DB9,Prata,2014
+04/10/2014,'Rolls Royce','Rio de Janeiro',97750,55000,550,650,750,'Ambassador Cars',Camargue,Prata,2014
+01/01/2014,'Aston Martin','Rio de Janeiro',122750,80000,50,1400,550,'Embassy Motors',DB9,Azul,2014
+02/02/2014,'Rolls Royce','Rio de Janeiro',90750,80000,800,900,550,'Style ‘N Ride',Camargue,Verde,2014
+03/03/2014,'Rolls Royce','Rio de Janeiro',91750,93000,50,900,550,'Embassy Motors',Camargue,Azul,2014
+04/04/2014,'Rolls Royce','Rio de Janeiro',94750,67000,50,1400,550,'Sporty Types Corp',Camargue,Prata,2014
+04/05/2014,'Rolls Royce','Rio de Janeiro',105250,130000,50,900,550,BritWheels,Camargue,Verde,2014
+04/06/2014,'Aston Martin','Rio de Janeiro',112750,61000,800,400,550,'Style ‘N Ride',DB9,Púrpura,2014
+04/07/2014,'Aston Martin','Rio de Janeiro',127750,28500,2550,900,550,'Tweedy Wheels',DB9,Vermelho,2014
+04/08/2014,'Aston Martin','Rio de Janeiro',132750,20500,50,900,750,'Ambassador Cars',DB9,Azul,2014
+04/09/2014,'Aston Martin','Rio de Janeiro',77750,80890,150,900,750,'Ambassador Cars',DB9,Prata,2014
+04/11/2014,'Aston Martin','Rio de Janeiro',71250,104000,50,1400,750,'Tweedy Wheels',DB9,Azul,2014
+04/11/2014,'Aston Martin','Rio de Janeiro',97750,130000,50,1400,750,'Sporty Types Corp',DB9,Prata,2014
+04/12/2014,'Aston Martin','Rio de Janeiro',157750,130000,5050,1400,750,'Style ‘N Ride',DB9,Prata,2014
+04/12/2014,'Aston Martin','Rio de Janeiro',97750,160000,50,1400,570,BritWheels,DB9,Preto,2014
+02/01/2015,'Aston Martin','Rio de Janeiro',181250,130000,50,1650,570,'Tweedy Wheels',DB9,Verde,2015
+02/02/2015,'Rolls Royce','Rio de Janeiro',132750,67000,50,1650,570,'Sporty Types Corp',Camargue,Prata,2015
+02/03/2015,'Rolls Royce','Rio de Janeiro',181250,67000,50,890,654,BritWheels,Camargue,Prata,2015
+02/04/2015,'Rolls Royce','Rio de Janeiro',112750,80890,50,400,987,'Style ‘N Ride',Camargue,Verde,2015
+02/05/2015,'Rolls Royce','Rio de Janeiro',132750,67000,1000,1650,654,'Embassy Motors',Camargue,Preto,2015
+02/06/2015,'Rolls Royce','Rio de Janeiro',181250,80890,50,1650,321,'Ambassador Cars',Camargue,Vermelho,2015
+02/07/2015,'Rolls Royce','Rio de Janeiro',112750,67000,1800,400,951,'Ambassador Cars',Camargue,Vermelho,2015
+02/08/2015,'Rolls Royce','Rio de Janeiro',105250,67000,50,900,987,'Embassy Motors',Camargue,Preto,2015
+02/09/2015,'Rolls Royce','Rio de Janeiro',132750,67000,50,350,750,'Style ‘N Ride',Camargue,Verde,2015
+02/10/2015,'Rolls Royce','Rio de Janeiro',181250,80890,50,1650,654,'Sporty Types Corp',Camargue,Púrpura,2015
+02/11/2015,'Rolls Royce','Rio de Janeiro',181250,80890,800,1650,987,BritWheels,Camargue,Preto,2015
+02/12/2015,'Rolls Royce','Rio de Janeiro',132750,80890,50,1650,321,'Sporty Types Corp',Camargue,Vermelho,2015
+02/01/2015,'Rolls Royce','Rio de Janeiro',181250,67000,50,400,654,'Sporty Types Corp',Camargue,Verde,2015
+02/02/2015,'Aston Martin','Rio de Janeiro',181250,80890,50,400,987,BritWheels,DB9,Púrpura,2015
+02/03/2015,'Aston Martin','Rio de Janeiro',112750,80890,50,400,963,BritWheels,DB9,Preto,2015
+02/04/2015,'Aston Martin','Rio de Janeiro',181250,80890,50,50,852,'Style ‘N Ride',DB9,Preto,2015
+02/05/2015,'Aston Martin','Rio de Janeiro',112750,80890,45,400,147,'Ambassador Cars',DB9,Azul,2015
+02/06/2015,'Aston Martin','Rio de Janeiro',105250,80890,800,350,852,'Embassy Motors',DB9,Prata,2015
+02/07/2015,'Aston Martin','Rio de Janeiro',181250,67000,500,350,654,'Style ‘N Ride',DB9,Prata,2015
+02/08/2015,'Aston Martin','Rio de Janeiro',127250,67000,1300,350,984,'Sporty Types Corp',DB9,Verde,2015
+02/09/2015,'Aston Martin','Rio de Janeiro',132750,67000,50,0,895,BritWheels,DB9,Prata,2015
+02/10/2015,'Aston Martin','Rio de Janeiro',112750,67000,50,350,486,'Sporty Types Corp',DB9,Azul,2015
+02/11/2015,'Aston Martin','Rio de Janeiro',181250,67000,50,1650,325,'Sporty Types Corp',DB9,Vermelho,2015
+02/12/2015,'Aston Martin','Rio de Janeiro',132750,130000,50,1650,658,BritWheels,DB9,Vermelho,2015
+01/01/2014,'Aston Martin','Rio de Janeiro',112750,130000,550,350,752,'Ambassador Cars',DB9,Vermelho,2014
+01/02/2014,Jaguar,'Rio de Janeiro',46750,30000,550,350,486,'Ambassador Cars',XK,Púrpura,2014
+01/03/2014,Jaguar,'Rio de Janeiro',47750,42500,50,0,486,'Ambassador Cars',XK,Verde,2014
+01/04/2014,Jaguar,'Rio de Janeiro',42250,30000,50,400,486,'Ambassador Cars',XK,Preto,2014
+01/05/2014,Jaguar,'Rio de Janeiro',46750,42500,50,400,486,'Style ‘N Ride',XK,Prata,2014
+01/06/2014,Jaguar,'Rio de Janeiro',46750,30000,550,400,486,'Sporty Types Corp',XK,Prata,2014
+01/07/2014,Jaguar,'Rio de Janeiro',42250,42500,550,1650,486,BritWheels,XK,Prata,2014
+01/08/2014,Jaguar,'Rio de Janeiro',46750,30000,800,400,486,'Sporty Types Corp',XK,Verde,2014
+01/09/2014,Jaguar,'Rio de Janeiro',112750,55000,650,1650,486,'Sporty Types Corp',XK,Azul,2014
+01/10/2014,Jaguar,'Rio de Janeiro',112750,30000,800,1650,987,BritWheels,XK,Prata,2014
+01/11/2014,Jaguar,'Rio de Janeiro',46750,42500,50,400,987,BritWheels,XK,Verde,2014
+01/12/2014,Jaguar,'Rio de Janeiro',42250,30000,50,400,987,'Ambassador Cars',XK,Púrpura,2014
+02/01/2015,Jaguar,'Rio de Janeiro',46750,42500,50,1650,987,'Embassy Motors',XK,Prata,2015
+02/02/2015,Jaguar,'Rio de Janeiro',46750,30000,50,400,987,'Style ‘N Ride',XK,Verde,2015
+02/03/2015,Jaguar,'Rio de Janeiro',46750,42500,800,400,987,BritWheels,XK,Púrpura,2015
+02/04/2015,Jaguar,'Rio de Janeiro',42250,30000,650,400,987,'Sporty Types Corp',XK,Vermelho,2015
+02/05/2015,Jaguar,'Rio de Janeiro',112750,42500,650,400,987,'Union Jack Sports Cars',XK,Vermelho,2015
+02/06/2015,Jaguar,'Rio de Janeiro',46750,30000,550,350,987,'British Luxury Automobile Corp',XK,Vermelho,2015
+02/07/2015,Jaguar,'Rio de Janeiro',42250,42500,550,350,987,'Buckingham Palace Car Services',XK,Púrpura,2015
+02/08/2015,Jaguar,'Rio de Janeiro',42250,30000,550,350,750,'Union Jack Sports Cars',XK,Verde,2015
+02/09/2015,Jaguar,'Rio de Janeiro',42250,17500,550,400,750,'Tweedy Wheels',XK,Preto,2015
+02/10/2015,Jaguar,'Rio de Janeiro',42250,30000,650,400,750,'Sporty Types Corp',XK,Prata,2015
+02/11/2015,Jaguar,'Rio de Janeiro',42250,42500,800,400,750,'Sporty Types Corp',XK,Prata,2015
+02/12/2015,Jaguar,'Rio de Janeiro',42250,30000,800,400,1250,BritWheels,XK,Prata,2015
+01/01/2014,Jaguar,'Rio de Janeiro',42250,42500,650,400,1250,BritWheels,XK,Verde,2014
+01/02/2014,Bentley,'Rio de Janeiro',42250,30700,800,400,1250,'Style ‘N Ride',Continental,Azul,2014
+01/03/2014,Bentley,'Rio de Janeiro',46750,30700,800,400,1250,'Style ‘N Ride',Continental,Prata,2014
+01/04/2014,Bentley,'Rio de Janeiro',46750,30700,650,675,987,'Embassy Motors',Continental,Vermelho,2014
+01/05/2014,Bentley,'Rio de Janeiro',112750,30700,800,675,1250,'Embassy Motors',Continental,Vermelho,2014
+01/06/2014,Bentley,'Rio de Janeiro',112750,67000,550,675,987,'Ambassador Cars',Continental,Prata,2014
+01/07/2014,Bentley,'Rio de Janeiro',112750,67000,550,675,1250,'Ambassador Cars',Continental,Prata,2014
+01/08/2014,Bentley,'Rio de Janeiro',112750,30700,550,675,987,'British Luxury Automobile Corp',Continental,Verde,2014
+01/09/2014,Bentley,'Rio de Janeiro',112750,30700,550,675,1250,'Buckingham Palace Car Services',Continental,Preto,2014
+01/10/2014,Bentley,'Rio de Janeiro',46750,30700,550,400,987,'Tweedy Wheels',Continental,Prata,2014
+01/11/2014,Bentley,'Rio de Janeiro',112750,67000,550,350,1250,'Ambassador Cars',Continental,Prata,2014
+01/12/2014,Bentley,'Rio de Janeiro',46750,67000,550,350,987,'Embassy Motors',Continental,Prata,2014
+02/01/2015,Bentley,'Rio de Janeiro',46750,67000,400,350,987,'Style ‘N Ride',Continental,Azul,2015
+02/02/2015,Bentley,'Rio de Janeiro',112750,30700,550,400,1250,BritWheels,Continental,Azul,2015
+02/03/2015,Bentley,'Rio de Janeiro',112750,30700,400,675,750,'Sporty Types Corp',Continental,Verde,2015
+02/04/2015,Bentley,'Rio de Janeiro',44000,30700,550,675,750,'Tweedy Wheels',Continental,Azul,2015
+02/05/2015,Bentley,'Rio de Janeiro',112750,30700,550,675,750,'Union Jack Sports Cars',Continental,Vermelho,2015
+02/06/2015,Bentley,'Rio de Janeiro',42250,67000,400,400,750,'Buckingham Palace Car Services',Continental,Vermelho,2015
+02/07/2015,Bentley,'Rio de Janeiro',42250,67000,550,400,486,'Ambassador Cars',Continental,Vermelho,2015
+02/08/2015,Bentley,'Rio de Janeiro',42250,30700,550,675,486,'Embassy Motors',Continental,Púrpura,2015
+02/09/2015,Bentley,'Rio de Janeiro',44000,67000,1300,350,486,'Tweedy Wheels',Continental,Púrpura,2015
+02/10/2015,Bentley,'Rio de Janeiro',42250,67000,1050,350,486,'Sporty Types Corp',Continental,Verde,2015
+02/11/2015,Bentley,'Rio de Janeiro',46750,67000,1050,350,486,'Embassy Motors',Continental,Preto,2015
+02/12/2015,Bentley,'Rio de Janeiro',46750,30700,1050,350,486,'Ambassador Cars',Continental,Azul,2015
+02/02/2015,Jaguar,'Rio de Janeiro',32500,42500,200,-50,486,'Classy Car Sales',XK,Vermelho,2015
+02/04/2015,Jaguar,'Rio de Janeiro',42250,42500,200,-50,325,'Classy Car Sales',XK,Verde,2015
+02/05/2015,TVR,'Rio de Janeiro',32500,42500,200,-50,325,'British Luxury Automobile Corp',Tuscan,Prata,2015
+02/06/2015,Jaguar,'Rio de Janeiro',122750,42500,350,-50,325,'Buckingham Palace Car Services',XK,Prata,2015
+02/07/2015,TVR,'Rio de Janeiro',32500,42500,200,-50,325,'Embassy Motors',Tuscan,Azul,2015
+02/08/2015,Jaguar,'Rio de Janeiro',44000,42500,200,-50,325,'Tweedy Wheels',XK,Prata,2015
+02/09/2015,TVR,'Rio de Janeiro',32500,42500,200,-50,325,'Sporty Types Corp',Tuscan,Prata,2015
+02/10/2015,Jaguar,'Rio de Janeiro',42250,42500,350,-50,325,'Buckingham Palace Car Services',XK,Vermelho,2015
+02/11/2015,TVR,'Rio de Janeiro',44000,42500,200,-50,325,'Sporty Types Corp',Tuscan,Azul,2015
+02/12/2015,Jaguar,'Rio de Janeiro',32500,42500,350,-50,325,'Style ‘N Ride',XK,Azul,2015
+02/01/2015,Jaguar,'Rio de Janeiro',44000,42500,200,-50,325,BritWheels,XK,Azul,2015
+02/02/2015,Jaguar,'Rio de Janeiro',42250,30700,200,-50,250,BritWheels,XK,Púrpura,2015
+02/03/2015,Jaguar,'Rio de Janeiro',42250,30700,200,-50,250,BritWheels,XK,Verde,2015
+02/04/2015,Jaguar,'Rio de Janeiro',42250,30700,200,-50,250,BritWheels,XK,Preto,2015
+02/05/2015,Jaguar,'Rio de Janeiro',42250,67000,200,-50,250,BritWheels,XK,Vermelho,2015
+02/06/2015,Jaguar,'Rio de Janeiro',44000,67000,200,-50,250,BritWheels,XK,Prata,2015
+02/07/2015,Jaguar,'Rio de Janeiro',44000,30700,350,-50,250,BritWheels,XK,Prata,2015
+02/08/2015,Jaguar,'Rio de Janeiro',42250,30700,200,-50,250,'Ambassador Cars',XK,Prata,2015
+02/09/2015,Jaguar,'Rio de Janeiro',42250,30700,200,-50,250,'Embassy Motors',XK,Prata,2015
+02/10/2015,Jaguar,'Rio de Janeiro',42250,67000,200,-50,250,'Embassy Motors',XK,Prata,2015
+02/11/2015,Jaguar,'Rio de Janeiro',42250,30700,350,-50,250,'Style ‘N Ride',XK,Prata,2015
+02/12/2015,Jaguar,'Rio de Janeiro',44000,67000,200,-50,250,BritWheels,XK,Azul,2015
+02/01/2015,Jaguar,'Rio de Janeiro',44000,67000,150,-50,250,'Sporty Types Corp',XK,Azul,2015
+02/02/2015,MGB,'Rio de Janeiro',42250,9500,200,-50,325,'British Luxury Automobile Corp',GT,Vermelho,2015
+02/03/2015,MGB,'Rio de Janeiro',42250,13500,150,-50,325,'Sporty Types Corp',GT,Verde,2015
+02/04/2015,MGB,'Rio de Janeiro',28000,9500,350,-50,325,'Sporty Types Corp',GT,Vermelho,2015
+02/05/2015,MGB,'Rio de Janeiro',25250,13500,200,-50,325,BritWheels,GT,Vermelho,2015
+02/06/2015,MGB,'Rio de Janeiro',25250,9500,200,50,325,BritWheels,GT,Vermelho,2015
+02/07/2015,MGB,'Rio de Janeiro',25250,13500,150,-50,325,'Style ‘N Ride',GT,Vermelho,2015
+02/08/2015,MGB,'Rio de Janeiro',28000,9500,350,-50,325,'Embassy Motors',GT,Azul,2015
+02/09/2015,MGB,'Rio de Janeiro',25250,13500,200,-50,325,'Ambassador Cars',GT,Verde,2015
+02/10/2015,MGB,'Rio de Janeiro',28000,9500,200,50,325,'Embassy Motors',GT,Prata,2015
+02/11/2015,MGB,'Rio de Janeiro',25250,13500,200,-50,325,'Style ‘N Ride',GT,Prata,2015
+02/12/2015,MGB,'Rio de Janeiro',28000,9500,200,-50,325,'Ambassador Cars',GT,Azul,2015
+02/01/2015,MGB,'Rio de Janeiro',25250,9500,150,-50,325,'Union Jack Sports Cars',GT,Verde,2015
+02/02/2015,Triumph,'Rio de Janeiro',25250,13500,200,-50,325,'Union Jack Sports Cars',TR4,Preto,2015
+02/03/2015,Triumph,'Rio de Janeiro',28000,22000,200,-50,325,'Embassy Motors',TR4,Púrpura,2015
+02/05/2015,Triumph,'Rio de Janeiro',25250,22000,200,-50,325,'Style ‘N Ride',TR4,Azul,2015
+02/07/2015,Triumph,'Rio de Janeiro',25250,22000,200,-50,325,BritWheels,TR4,Prata,2015
+02/08/2015,Triumph,'Rio de Janeiro',28000,22000,200,50,325,'Sporty Types Corp',TR4,Azul,2015
+02/09/2015,Triumph,'Rio de Janeiro',25250,22000,200,-50,325,'Style ‘N Ride',TR4,Azul,2015
+02/10/2015,Triumph,'Rio de Janeiro',28000,22000,200,-50,325,'Ambassador Cars',TR4,Vermelho,2015
+02/11/2015,Triumph,'Rio de Janeiro',28000,22000,200,-50,325,'Classy Car Sales',TR4,Vermelho,2015
+02/12/2015,Triumph,'Rio de Janeiro',28000,22000,200,-50,325,'British Luxury Automobile Corp',TR4,Verde,2015
+09/01/2015,Triumph,'Rio de Janeiro',28000,22000,550,875,450,'Embassy Motors',TR4,Prata,2015
+10/01/2015,'Aston Martin','Rio de Janeiro',77250,36125,1300,875,1250,BritWheels,DB9,Vermelho,2015
+11/02/2015,'Aston Martin','Rio de Janeiro',72000,22500,550,875,1250,'Style ‘N Ride',DB9,Azul,2015
+12/03/2015,'Aston Martin','Rio de Janeiro',25500,27500,1050,875,950,'Classy Car Sales',DB9,Verde,2015
+13/03/2015,'Aston Martin','Rio de Janeiro',39750,22500,800,875,1250,'Style ‘N Ride',DB9,Prata,2015
+14/03/2015,'Rolls Royce','Rio de Janeiro',77250,36125,1050,875,1250,'Style ‘N Ride',Camargue,Prata,2015
+15/04/2015,'Aston Martin','Rio de Janeiro',48550,22500,2550,250,950,'Style ‘N Ride',DB9,Azul,2015
+16/04/2015,'Rolls Royce','Rio de Janeiro',25500,27500,1300,250,1250,'Style ‘N Ride',Camargue,Preto,2015
+17/05/2015,'Aston Martin','Rio de Janeiro',48550,22500,1050,250,1250,'Ambassador Cars',DB9,Vermelho,2015
+18/05/2015,'Aston Martin','Rio de Janeiro',39750,22500,550,875,1250,'Tweedy Wheels',DB9,Azul,2015
+19/05/2015,'Aston Martin','Rio de Janeiro',48550,22500,1050,-75,1250,'Embassy Motors',DB9,Verde,2015
+20/06/2015,'Aston Martin','Rio de Janeiro',40440,27500,2550,875,950,'Union Jack Sports Cars',DB9,Prata,2015
+21/07/2015,'Aston Martin','Rio de Janeiro',77250,22500,1300,875,1250,'Style ‘N Ride',DB9,Prata,2015
+22/07/2015,'Rolls Royce','Rio de Janeiro',48550,22500,1050,175,1250,'Sporty Types Corp',Camargue,Púrpura,2015
+23/09/2015,'Aston Martin','Rio de Janeiro',39750,27500,1300,-75,1250,'Buckingham Palace Car Services',DB9,Preto,2015
+24/10/2015,'Aston Martin','Rio de Janeiro',40440,22500,550,175,1250,'British Luxury Automobile Corp',DB9,Vermelho,2015
+25/11/2015,'Rolls Royce','Rio de Janeiro',72000,22500,1050,-75,950,'Classy Car Sales',Camargue,Azul,2015
+26/11/2015,'Aston Martin','Rio de Janeiro',40440,36125,800,875,1250,'Ambassador Cars',DB9,Verde,2015
+27/11/2015,'Aston Martin','Rio de Janeiro',77250,22500,550,875,1250,'Embassy Motors',DB9,Prata,2015
