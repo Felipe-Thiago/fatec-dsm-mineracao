@@ -3,10 +3,13 @@
 # python -m pip install pandas 
 # python -m pip install matplotlib
 # python -m pip install seaborn
+# python -m pip install scikit-learn
+# python -m pip install scipy
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.discriminant_analysis import StandardScaler
+from sklearn.preprocessing import PowerTransformer, RobustScaler
 
 # Download do dataset na nuvem kaggle
 # path = kagglehub.dataset_download("vivek468/superstore-dataset-final")
@@ -17,24 +20,39 @@ Observação: Arquivo kaggle utilizado em forma de download manual, encontrado a
 
 # Leitura do arquivo CSV
 df = pd.read_csv("Sample - Superstore.csv", encoding='latin1')
-# print("Primeiros 5 registros: \n", df.head())
 
-# Seleção dos dados: segment, state, category, sub-category, product name, sales, discount, profit
-dados = df[["Product Name", "Segment", "Country","City", "State", "Category", "Sub-Category", "Sales", "Discount", "Profit"]]
+# Seleção dos dados
+dados = df[["Product Name", "Segment", "Country", "State", "Category", "Sub-Category", "Sales", "Discount", "Profit"]]
+num_cols = ["Sales", "Discount", "Profit"]
 
-# print("Primeiros 5 registros dos dados selecionados: \n", dados.head())
+# ------------------------ normalização ------------------------
 
-# Normalização dos dados numéricos usando z-score com 6 casas decimais ------------------------
-scaler = StandardScaler()
-dados[["Sales", "Discount", "Profit"]] = scaler.fit_transform(dados[["Sales", "Discount", "Profit"]]).round(6)
-# print("Dados normalizados: \n", dados.head())
+# Inspecionar assimetria (skew) antes
+print("Assimetria antes:\n", dados[num_cols].skew())
+
+
+
+# Power Transformer (Yeo-Johnson) para atributos numéricos
+pt = PowerTransformer(method='yeo-johnson', standardize=True)
+dados[num_cols] = pt.fit_transform(dados[num_cols])
+
+# Normalização dos dados numéricos usando robust scaling com 6 casas decimais ------------------------
+scaler = RobustScaler()
+dados[num_cols] = scaler.fit_transform(dados[num_cols]).round(6)
 
 # Distribuição dos valores em 5 bins de mesma largura (Equi-width)
 dados['Sales_bin'] = pd.cut(dados['Sales'], bins=5, labels=False)
 dados['Discount_bin'] = pd.cut(dados['Discount'], bins=5, labels=False)
 dados['Profit_bin'] = pd.cut(dados['Profit'], bins=5, labels=False)
 
-# print(dados[['Sales', 'Sales_bin', 'Discount', 'Discount_bin', 'Profit', 'Profit_bin']].head())
+
+
+# Inspecionar assimetria depois
+print("Assimetria depois:\n", dados[num_cols].skew())
+
+
+# ---------------- outliers -------------------------
+
 
 # Identificando outliers em 'Profit'
 Q1_profit = dados['Profit'].quantile(0.25)
@@ -62,10 +80,11 @@ dados = dados[~dados.index.isin(outliers_profit.index)]
 dados = dados[~dados.index.isin(outliers_sales.index)]
 dados = dados[~dados.index.isin(outliers_discount.index)]
 
-# print("Dados após remoção de outliers: \n", dados.head())
-
 # Retirando as colunas de bins
 dados = dados.drop(columns=['Sales_bin', 'Discount_bin', 'Profit_bin'])
+
+
+# --------------- gráficos -------------------------
 
 
 # Gráficos dos atributos numéricos e categóricos
@@ -105,7 +124,9 @@ plt.show()
 # plt.show()
 
 
+# --------------- exportação -------------------------
+
 
 # Exportando o novo DataFrame para um arquivo CSV
-dados.to_csv("relatorio_superstore_tratado2.csv", index=False, encoding='utf-8')
-print("Relatório gerado: relatorio_superstore_tratado2.csv")
+dados.to_csv("relatorio_superstore_tratado3.csv", index=False, encoding='utf-8')
+print("Relatório gerado: relatorio_superstore_tratado3.csv")

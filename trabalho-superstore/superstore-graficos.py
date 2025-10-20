@@ -11,7 +11,7 @@ from scipy.spatial.distance import cdist
 from mpl_toolkits.mplot3d import Axes3D
 
 # Leitura do arquivo CSV gerado após normalização
-df = pd.read_csv("relatorio_superstore_tratado2.csv", encoding='utf-8')
+df = pd.read_csv("relatorio_superstore_tratado3.csv", encoding='utf-8')
 
 # Seleção dos dados numéricos para clusterização (usados como base)
 X = df[["Sales", "Discount", "Profit"]]
@@ -119,5 +119,5 @@ for col in colunas:
     plt.show()
 
 # Exportando o DataFrame com clusters para um arquivo CSV
-# df.to_csv("relatorio_superstore_com_clusters.csv", index=False, encoding='utf-8')
-print("Relatório gerado: relatorio_superstore_com_clusters.csv")
+df.to_csv("relatorio_superstore_com_clusters2.csv", index=False, encoding='utf-8')
+print("Relatório gerado: relatorio_superstore_com_clusters2.csv")
